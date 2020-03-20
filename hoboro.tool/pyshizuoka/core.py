@@ -14,7 +14,7 @@ class Session:
         return asdict(self)
 
 
-def scrape():
+def _get_sessions():
     sessions = [
         Session(
             url="https://shizuoka.pycon.jp/",
@@ -27,3 +27,7 @@ def scrape():
     ]
     for session in sessions:
         yield session
+
+
+def scrape():
+    yield from _get_sessions()
