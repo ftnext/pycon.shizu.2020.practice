@@ -25,4 +25,5 @@ def scrape():
             content="セッション内容",
         )
     ]
-    return sessions
+    for session in sessions:
+        yield session
