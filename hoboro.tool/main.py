@@ -1,4 +1,13 @@
 import argparse
+import csv
+
+
+def to_csv(sessions, output, fields):
+    with open(output, "w") as f:
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        for session in sessions:
+            writer.writerow(session)
 
 
 def main():
@@ -7,8 +16,9 @@ def main():
     parser.add_argument("--fields", nargs="+")
 
     args = parser.parse_args()
-    print(args.output)
-    print(args.fields)
+
+    sessions = [{"speaker": "test", "level": "1"}]
+    to_csv(sessions, args.output, args.fields)
 
 
 if __name__ == "__main__":
