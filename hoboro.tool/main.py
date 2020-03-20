@@ -19,7 +19,7 @@ def main():
 
     args = parser.parse_args()
 
-    sessions = scrape()
+    sessions = (session.to_dict() for session in scrape())
     to_csv(sessions, args.output, args.fields)
 
 
