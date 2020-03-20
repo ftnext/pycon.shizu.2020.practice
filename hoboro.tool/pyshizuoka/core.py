@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 
 @dataclass(frozen=True)
@@ -9,6 +9,9 @@ class Session:
     category: str
     url: str
     content: str
+
+    def to_dict(self):
+        return asdict(self)
 
 
 def scrape():
