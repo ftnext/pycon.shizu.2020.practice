@@ -1,6 +1,8 @@
 import argparse
 import csv
 
+from pyshizuoka import scrape
+
 
 def to_csv(sessions, output, fields):
     with open(output, "w") as f:
@@ -17,7 +19,7 @@ def main():
 
     args = parser.parse_args()
 
-    sessions = [{"speaker": "test", "level": "1"}]
+    sessions = scrape()
     to_csv(sessions, args.output, args.fields)
 
 
