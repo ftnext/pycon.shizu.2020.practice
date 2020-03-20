@@ -9,3 +9,17 @@ class Session:
     category: str
     url: str
     content: str
+
+
+def scrape():
+    sessions = [
+        Session(
+            url="https://shizuoka.pycon.jp/",
+            title="title",
+            speaker="test",
+            level="ALL",
+            category="カテゴリ",
+            content="セッション内容",
+        )
+    ]
+    return sessions
